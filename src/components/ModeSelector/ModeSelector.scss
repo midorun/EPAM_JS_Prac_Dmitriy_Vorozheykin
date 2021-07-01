@@ -1,7 +1,18 @@
-.mode-selectors__mode-selector {}
+$mode-selectors__mode-selector-width: 200px;
+$mode-selector__icon-width: 60px;
+$mode-selector__icon-height: 60px;
+
+.mode-selectors__mode-selector {
+  width: $mode-selectors__mode-selector-width;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 610px) {
+    width: 30%;
+  }
+}
 
 .mode-selector__btn {
-  width: 200px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -9,16 +20,23 @@
   outline: none;
   border: none;
   cursor: pointer;
+
+
 }
 
 .mode-selector__icon {
-  width: 60px;
-  height: 60px;
+  width: 30%;
+  height: 30%;
 }
 
 .mode-selector__text {
+  white-space: nowrap;
   margin-top: 10px;
-  font-size: 2rem;
+  font-size: 2em;
+
+  @media (max-width: 610px) {
+    font-size: 1.5em;
+  }
 }
 
 .active {

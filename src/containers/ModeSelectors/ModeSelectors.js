@@ -4,23 +4,15 @@ import { ReactComponent as speakerIcon } from '../../assets/icons/speaker.svg'
 import { ReactComponent as microphoneIcon } from '../../assets/icons/microphone.svg'
 import { ReactComponent as menuIcon } from '../../assets/icons/menu.svg'
 import './ModeSelectors.scss'
-
+import { MODS } from '../../constants'
 
 const ModeSelectors = ({ selectedMode, handleModeSelection }) => {
 
-  const checkActiveModeSelector = (selectedMode, placeholder) => {
-    if (placeholder === selectedMode) {
-      return 'active'
-    }
-  }
-
-
-
   return (
     <ul className="app__mode-selectors mode-selectors">
-      <ModeSelector icon={menuIcon} placeholder='All voices' handleModeSelection={handleModeSelection} />
-      <ModeSelector icon={microphoneIcon} placeholder='Microphone' handleModeSelection={handleModeSelection} />
-      <ModeSelector icon={speakerIcon} placeholder='Stream' handleModeSelection={handleModeSelection} />
+      <ModeSelector icon={menuIcon} placeholder={MODS.ALL_VOICES} handleModeSelection={handleModeSelection} selectedMode={selectedMode} />
+      <ModeSelector icon={microphoneIcon} placeholder={MODS.MICROPHONE} handleModeSelection={handleModeSelection} selectedMode={selectedMode} />
+      <ModeSelector icon={speakerIcon} placeholder={MODS.STREAM} handleModeSelection={handleModeSelection} selectedMode={selectedMode} />
     </ul>
   )
 }

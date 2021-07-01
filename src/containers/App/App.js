@@ -3,10 +3,11 @@ import './App.scss';
 import ModeSelected from '../ModeSelected';
 import ModeSelectors from '../ModeSelectors'
 import { useState } from 'react'
+import { MODS } from '../../constants'
 
 function App() {
 
-  const [mode, setMode] = useState('All voices')
+  const [mode, setMode] = useState(MODS.ALL_VOICES)
 
   const handleModeSelection = (value) => {
     setMode(value)
