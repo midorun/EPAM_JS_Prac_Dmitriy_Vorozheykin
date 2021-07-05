@@ -21,3 +21,12 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
+
+svg {
+  display: inline-block;
+  fill: currentColor !important;
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+  // background-color: gray;
+}
