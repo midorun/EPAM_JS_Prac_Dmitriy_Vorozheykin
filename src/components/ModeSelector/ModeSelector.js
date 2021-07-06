@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom';
+import Icon from '../Icon'
 import './ModeSelector.scss'
 
-const ModeSelector = ({ icon, placeholder, handleModeSelection, selectedMode }) => {
+const ModeSelector = ({ iconId, placeholder, handleModeSelection, selectedMode }) => {
 
   const isActive = (selectedMode, placeholder) => {
     if (placeholder === selectedMode) {
@@ -14,7 +16,7 @@ const ModeSelector = ({ icon, placeholder, handleModeSelection, selectedMode }) 
   return (
     <li className="mode-selectors__mode-selector mode-selector" >
       <button className={buttonClassName} onClick={() => handleModeSelection(placeholder)}>
-        {React.createElement(icon, { className: 'mode-selector__icon' })}
+        <Icon xlinkHref={iconId} className='mode-selector__icon' />
         <span className="mode-selector__text">
           {placeholder}
         </span>

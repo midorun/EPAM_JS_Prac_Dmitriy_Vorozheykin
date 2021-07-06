@@ -5,3 +5,14 @@
   align-items: center;
   font-size: 48px;
 }
+
+.mode-selected {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.start,
+.stop {
+  cursor: pointer;
+}

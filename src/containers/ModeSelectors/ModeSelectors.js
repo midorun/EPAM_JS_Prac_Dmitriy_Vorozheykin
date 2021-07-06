@@ -1,18 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ModeSelector from '../../components/ModeSelector';
-import { ReactComponent as speakerIcon } from '../../assets/icons/speaker.svg'
-import { ReactComponent as microphoneIcon } from '../../assets/icons/microphone.svg'
-import { ReactComponent as menuIcon } from '../../assets/icons/menu.svg'
 import './ModeSelectors.scss'
 import { MODS } from '../../constants'
 
-const ModeSelectors = ({ selectedMode, handleModeSelection }) => {
+const ModeSelectors = ({ selectedMode, handleModeSelection, history }) => {
 
   return (
     <ul className="app__mode-selectors mode-selectors">
-      <ModeSelector icon={menuIcon} placeholder={MODS.ALL_VOICES} handleModeSelection={handleModeSelection} selectedMode={selectedMode} />
-      <ModeSelector icon={microphoneIcon} placeholder={MODS.MICROPHONE} handleModeSelection={handleModeSelection} selectedMode={selectedMode} />
-      <ModeSelector icon={speakerIcon} placeholder={MODS.STREAM} handleModeSelection={handleModeSelection} selectedMode={selectedMode} />
+      <ModeSelector iconId={MODS.ALL_VOICES} placeholder={MODS.ALL_VOICES} handleModeSelection={handleModeSelection} selectedMode={selectedMode} history={history} />
+      <ModeSelector iconId={MODS.MICROPHONE} placeholder={MODS.MICROPHONE} handleModeSelection={handleModeSelection} selectedMode={selectedMode} history={history} />
+      <ModeSelector iconId={MODS.STREAM} placeholder={MODS.STREAM} handleModeSelection={handleModeSelection} selectedMode={selectedMode} history={history} />
     </ul>
   )
 }
