@@ -15,7 +15,7 @@ const ModeSelected = ({ modeSelected }) => {
     <div className="app__mode-selected mode-selected">
       <span className="mode-selected__text">Active: {modeSelected}</span>
       <Switch>
-        <Route path={`/${MODS.ALL_VOICES}`} render={() => <AllVoicesPage />} />
+        <Route exact path='/' render={() => <AllVoicesPage />} />
         <Route path={`/${MODS.MICROPHONE}`} render={() => <MicrophonePage />} />
         <Route path={`/${MODS.STREAM}`} render={() => <StreamPage />} />
       </Switch>

@@ -12,8 +12,6 @@ function App() {
   const [mode, setMode] = useState(MODS.ALL_VOICES)
   const history = useHistory()
 
-  console.log(history);
-
   const handleModeSelection = (value) => {
     setMode(value)
     history.push(value)

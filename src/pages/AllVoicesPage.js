@@ -4,15 +4,24 @@ const AllVoicesPage = () => {
 
   const [voices, setVoices] = useState()
 
-  useEffect(() => {
-    effect
-    return () => {
-      cleanup
+  const getVoices = async (params) => {
+    const response = await fetch('https://voicy-speaker.herokuapp.com/voices')
+
+    if (response.ok) {
+      return await response.json()
     }
-  }, [input])
+
+    throw new Error("Could not fetch data")
+  }
+
+
+  useEffect(() => {
+    setVoices(getVoices().then(data => data))
+
+  }, [])
 
   return (
-    <div>
+    <div className="vouces">
 
     </div>
   )
