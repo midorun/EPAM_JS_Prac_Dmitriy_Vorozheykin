@@ -7,8 +7,8 @@ const ModeSelected = ({ modeSelected }) => {
   return (
     <div className="app__mode-selected">
       Active: {modeSelected}
-      {modeSelected === MODS.MICROPHONE ?
-        <Icon xlinkHref='icons#play' /> : null}
+
+      <Icon xlinkHref='All voices' />
     </div>
   )
 }
