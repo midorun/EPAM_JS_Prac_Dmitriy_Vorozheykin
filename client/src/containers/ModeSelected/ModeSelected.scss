@@ -1,0 +1,19 @@
+.app__mode-selected {
+  padding-top: 20цpx;
+  height: 90%;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+.mode-selected {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.start,
+.stop {
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+$mode-selectors__mode-selector-width: 200px;
+
+.mode-selectors__mode-selector {
+  width: $mode-selectors__mode-selector-width;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 610px) {
+    width: 30%;
+  }
+}
+
+.mode-selector__btn {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mode-selector__icon {
+  width: 30%;
+  height: 30%;
+}
+
+.mode-selector__text {
+  white-space: nowrap;
+  margin-top: 10px;
+  font-size: 2em;
+
+  @media (max-width: 610px) {
+    font-size: 1.5em;
+  }
+}
+
+.active {
+  fill: #1d801d;
+  color: #1d801d;
+}
