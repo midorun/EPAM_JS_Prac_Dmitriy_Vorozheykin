@@ -8,17 +8,15 @@ const AllVoicesPage = () => {
     const interval = setInterval(() =>
       fetch('https://voicy-speaker.herokuapp.com/voices')
         .then(response => response.json())
-        .then(response => setVoices(response.splice(0, 5))), 2000)
+        .then(response => setVoices(response.splice(response.length - 5, 5))), 2000)
 
     return () => clearInterval(interval)
   }, [])
 
-  console.log(voices);
-
   return (
     voices ?
       <div className="pages__all-voices all-voices">
-        {voices.map(({ timeStamp, audioBlob: [{ data }] }, index) => <Audio key={index} audioChunks={data} />)}
+        {voices.map(({ timeStamp, audioBlob: [{ data }] }) => <Audio key={timeStamp} audioChunks={data} />)}
       </div> : null
   )
 }

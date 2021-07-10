@@ -30,3 +30,11 @@ svg {
   vertical-align: middle;
   // background-color: gray;
 }
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: var(--container-width);
+  height: 100%;
+}

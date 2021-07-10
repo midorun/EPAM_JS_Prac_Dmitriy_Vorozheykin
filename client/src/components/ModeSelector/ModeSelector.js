@@ -11,16 +11,20 @@ const ModeSelector = ({ iconId, placeholder, handleModeSelection, selectedMode }
     }
   }
 
-  const buttonClassName = `${'mode-selector__btn ' + isActive(selectedMode, placeholder)}`
+  const activeClassName = `${isActive(selectedMode, placeholder)}`
 
   return (
-    <li className="mode-selectors__mode-selector mode-selector" >
-      <button className={buttonClassName} onClick={() => handleModeSelection(placeholder)}>
-        <Icon xlinkHref={iconId} className='mode-selector__icon' />
-        <span className="mode-selector__text">
-          {placeholder}
-        </span>
-      </button>
+    <li
+      className={`mode-selectors__mode-selector mode-selector ${activeClassName}`}
+      onClick={() => handleModeSelection(placeholder)}
+    >
+      <Icon
+        xlinkHref={iconId}
+        className='mode-selector__icon'
+      />
+      <span className="mode-selector__text">
+        {placeholder}
+      </span>
     </li>
   )
 }

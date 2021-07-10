@@ -13,7 +13,7 @@ const StreamPage = ({ socket }) => {
   }, [socket])
 
   return (
-    <div>
+    <div className="pages__stream">
       Тут должна быть анимация аудио
     </div>
   )
