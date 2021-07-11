@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import './pages.scss'
+import { ROOT } from '../../constants/index'
+import Audio from './Audio'
+import '../pages.scss'
 const AllVoicesPage = () => {
 
   const [voices, setVoices] = useState()
-
+  console.log(ROOT);
+  console.log(ROOT + '/voices');
   useEffect(() => {
     const interval = setInterval(() =>
-      fetch('https://voicy-speaker.herokuapp.com/voices')
+      fetch(ROOT + '/voices')
         .then(response => response.json())
         .then(response => setVoices(response.splice(response.length - 5, 5))), 2000)
 
@@ -18,24 +21,6 @@ const AllVoicesPage = () => {
       <div className="pages__all-voices all-voices">
         {voices.map(({ timeStamp, audioBlob: [{ data }] }) => <Audio key={timeStamp} audioChunks={data} />)}
       </div> : null
-  )
-}
-
-const Audio = ({ audioChunks }) => {
-
-  const createAudioUrl = (audioChunks) => {
-    const buff = new Int8Array(audioChunks).buffer
-    const audioBlob = new Blob([buff], { type: 'audio/wav' })
-    const audioUrl = URL.createObjectURL(audioBlob)
-    return audioUrl
-  }
-
-  return (
-    <div className="all-voices__item">
-      <audio controls>
-        <source src={createAudioUrl(audioChunks)} type="audio/wav" />
-      </audio>
-    </div>
   )
 }
 

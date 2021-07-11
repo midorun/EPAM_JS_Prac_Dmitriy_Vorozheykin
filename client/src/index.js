@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './containers/App/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { io } from 'socket.io-client';
+import { ROOT } from './constants';
 import './index.scss';
 
-const socket = io.connect('https://voicy-speaker.herokuapp.com')
+const socket = io.connect(ROOT)
 
 ReactDOM.render(
   <React.StrictMode>

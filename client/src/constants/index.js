@@ -8,3 +8,5 @@ export const RECORD = {
   START: 'start',
   STOP: 'stop'
 }
+
+export const ROOT = 'http://localhost:9000'

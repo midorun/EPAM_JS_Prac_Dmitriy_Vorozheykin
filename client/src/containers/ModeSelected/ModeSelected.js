@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { MODS } from '../../constants'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MicrophonePage from '../../pages/MicrophonePage';
 import './ModeSelected.scss'
-import AllVoicesPage from '../../pages/AllVoicesPage';
+import AllVoicesPage from '../../pages/AllVoicesPage/AllVoicesPage';
 import StreamPage from '../../pages/StreamPage';
+import UsersCount from '../UsersCount'
 
 const ModeSelected = ({ modeSelected, socket, usersCount }) => {
 
   return (
     <div className="app__mode-selected mode-selected">
-      <span className="mode-selected__users-count">Активных пользователей: {usersCount}</span>
+      <UsersCount socket={socket} />
       <span className="mode-selected__text">Active: {modeSelected}</span>
       <div className="pages">
         <Switch>
@@ -20,7 +21,6 @@ const ModeSelected = ({ modeSelected, socket, usersCount }) => {
         </Switch>
         <Redirect to={`/${MODS.ALL_VOICES}`} />
       </div>
-
     </div>
   )
 }
