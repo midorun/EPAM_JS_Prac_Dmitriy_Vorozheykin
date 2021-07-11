@@ -15,13 +15,14 @@ const io = require('socket.io')(server);
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors());
 
+app.get('/voices', function (req, res) {
+  res.send(JSON.stringify(DATA.audioMessages))
+})
+
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.get('/voices', function (req, res) {
-  res.send(JSON.stringify(DATA.audioMessages))
-})
 
 const DATA = {
   users: [],
@@ -45,8 +46,8 @@ io.on('connection', (socket) => {
       'timeStamp': new Date().toString(),
       'audioBlob': audioChunks
     });
-    sendAudioMessageToAllUsers(DATA.users, DATA.audioMessages);
-    console.log(DATA.audioMessages);
+    sendAudioMessageToAllUsers(DATA.users, audioChunks);
+    console.log(DATA.audioMessages.length);
   });
 
 })

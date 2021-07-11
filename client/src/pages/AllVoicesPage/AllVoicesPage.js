@@ -5,8 +5,7 @@ import '../pages.scss'
 const AllVoicesPage = () => {
 
   const [voices, setVoices] = useState()
-  console.log(ROOT);
-  console.log(ROOT + '/voices');
+
   useEffect(() => {
     const interval = setInterval(() =>
       fetch(ROOT + '/voices')
