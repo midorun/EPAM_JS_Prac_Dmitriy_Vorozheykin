@@ -1,9 +1,3 @@
-// const app = require("express")();
-// const cors = require('cors');
-// import { createServer } from 'http';
-// import { Server } from 'socket.io';
-// //some libs
-
 const express = require('express');
 const cors = require('cors');
 const app = express();
