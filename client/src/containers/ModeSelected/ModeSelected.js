@@ -1,11 +1,12 @@
 import React from 'react'
-import { MODS } from '../../constants'
 import { Switch, Route, Redirect } from 'react-router-dom';
+
 import MicrophonePage from '../../pages/MicrophonePage';
-import './ModeSelected.scss'
 import AllVoicesPage from '../../pages/AllVoicesPage/AllVoicesPage';
 import StreamPage from '../../pages/StreamPage';
 import UsersCount from '../UsersCount'
+import { MODS } from '../../constants'
+import './ModeSelected.scss'
 
 const ModeSelected = ({ modeSelected, socket, usersCount }) => {
 

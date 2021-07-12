@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { io } from 'socket.io-client';
+
+import App from './containers/App/App';
 import { ROOT } from './constants';
 import './index.scss';
 

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { ROOT } from '../../constants/index'
+
 import Audio from './Audio'
+import { ROOT } from '../../constants/index'
 import '../pages.scss'
+
 const AllVoicesPage = () => {
 
   const [voices, setVoices] = useState()
@@ -16,10 +18,10 @@ const AllVoicesPage = () => {
   }, [])
 
   return (
-    voices ?
-      <div className="pages__all-voices all-voices">
-        {voices.map(({ timeStamp, audioBlob: [{ data }] }) => <Audio key={timeStamp} audioChunks={data} />)}
-      </div> : null
+    voices &&
+    <div className="pages__all-voices all-voices">
+      {voices.map(({ timeStamp, audioBlob: [{ data }] }) => <Audio key={timeStamp} audioChunks={data} />)}
+    </div>
   )
 }
 

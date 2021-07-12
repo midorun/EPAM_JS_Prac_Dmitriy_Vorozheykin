@@ -1,11 +1,12 @@
-import './App.scss';
-import ModeSelected from '../ModeSelected';
-import ModeSelectors from '../ModeSelectors'
 import { useState } from 'react'
-import { MODS } from '../../constants'
 import { useHistory } from 'react-router-dom';
 
-function App({ socket }) {
+import ModeSelected from '../ModeSelected';
+import ModeSelectors from '../ModeSelectors'
+import { MODS } from '../../constants'
+import './App.scss';
+
+const App = ({ socket }) => {
 
   const [mode, setMode] = useState(MODS.ALL_VOICES)
   const history = useHistory()
